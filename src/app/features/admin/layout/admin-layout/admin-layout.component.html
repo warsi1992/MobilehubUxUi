@@ -1,22 +1,17 @@
 <div class="admin-container">
 
-  <!-- Sidebar -->
   <app-admin-sidebar
-    class="sidebar"
-    [class.open]="isSidebarOpen">
+    [isOpen]="isSidebarOpen">
   </app-admin-sidebar>
 
-  <!-- Overlay for Mobile -->
   <div
     class="sidebar-overlay"
     *ngIf="isSidebarOpen"
     (click)="toggleSidebar()">
   </div>
 
-  <!-- Main Content -->
   <div class="admin-content">
 
-    <!-- Header -->
     <app-admin-header
       (menuClick)="toggleSidebar()">
     </app-admin-header>
