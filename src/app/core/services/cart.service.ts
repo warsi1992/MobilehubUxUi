@@ -10,7 +10,7 @@ export class CartService {
 
   private http = inject(HttpClient);
 
-  private api = environment.apiUrl+'Cart';
+  private api = environment.apiUrl+'/Cart';
 
   private cartCount = new BehaviorSubject<number>(0);
 
