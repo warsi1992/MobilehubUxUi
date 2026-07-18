@@ -1,17 +1,30 @@
 <div class="admin-container">
 
-    <app-admin-sidebar></app-admin-sidebar>
+  <!-- Sidebar -->
+  <app-admin-sidebar
+    class="sidebar"
+    [class.open]="isSidebarOpen">
+  </app-admin-sidebar>
 
-    <div class="admin-content">
+  <!-- Overlay for Mobile -->
+  <div
+    class="sidebar-overlay"
+    *ngIf="isSidebarOpen"
+    (click)="toggleSidebar()">
+  </div>
 
-        <app-admin-header></app-admin-header>
+  <!-- Main Content -->
+  <div class="admin-content">
 
-        <div class="p-4">
+    <!-- Header -->
+    <app-admin-header
+      (menuClick)="toggleSidebar()">
+    </app-admin-header>
 
-            <router-outlet></router-outlet>
-
-        </div>
-
+    <div class="content-body p-3 p-md-4">
+      <router-outlet></router-outlet>
     </div>
+
+  </div>
 
 </div>
