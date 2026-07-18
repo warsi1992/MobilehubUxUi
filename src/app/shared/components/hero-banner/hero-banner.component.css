@@ -1,0 +1,55 @@
+.hero{
+
+    min-height:420px;
+
+    display:flex;
+
+    align-items:center;
+
+    color:white;
+
+}
+
+.hero1{
+
+    background:linear-gradient(135deg,#0d6efd,#0dcaf0);
+
+}
+
+.hero2{
+
+    background:linear-gradient(135deg,#6f42c1,#0d6efd);
+
+}
+
+.hero3{
+
+    background:linear-gradient(135deg,#198754,#20c997);
+
+}
+
+.hero h1{
+
+    font-size:52px;
+
+    font-weight:700;
+
+}
+
+.hero p{
+
+    font-size:22px;
+
+    margin:25px 0;
+
+}
+
+.hero-image{
+
+    width:90%;
+
+    max-height:350px;
+
+    object-fit:contain;
+
+}

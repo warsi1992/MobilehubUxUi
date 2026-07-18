@@ -1,0 +1,16 @@
+.card{
+    border:none;
+    border-radius:12px;
+}
+
+.table th{
+    vertical-align:middle;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.btn{
+    border-radius:8px;
+}

@@ -1,0 +1,52 @@
+<div class="container mt-5" style="max-width:500px;">
+
+    <h2 class="mb-4 text-center">Create Account</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+        <div class="mb-3">
+            <input
+                class="form-control"
+                placeholder="First Name"
+                formControlName="firstName">
+        </div>
+
+        <div class="mb-3">
+            <input
+                class="form-control"
+                placeholder="Last Name"
+                formControlName="lastName">
+        </div>
+
+        <div class="mb-3">
+            <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                formControlName="email">
+        </div>
+
+        <div class="mb-3">
+            <input
+                class="form-control"
+                placeholder="Phone"
+                formControlName="phone">
+        </div>
+
+        <div class="mb-3">
+            <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="password">
+        </div>
+
+        <button
+            class="btn btn-warning w-100"
+            type="submit">
+            Register
+        </button>
+
+    </form>
+
+</div>

@@ -1,0 +1,123 @@
+<div class="container py-5" *ngIf="product">
+
+    <div class="row">
+
+        <!-- Thumbnails -->
+        <div class="col-lg-1 col-md-2">
+
+            <img
+                *ngFor="let image of product.images"
+                [src]="apiUrl + image.imageUrl"
+                class="thumb mb-3"
+                [class.active-thumb]="selectedImage === image.imageUrl"
+                (click)="changeImage(image.imageUrl)">
+
+        </div>
+
+        <!-- Main Image -->
+        <div class="col-lg-5 col-md-5">
+
+            <img
+                [src]="apiUrl + selectedImage"
+                class="main-image">
+
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-lg-6 col-md-5">
+
+            <h2 class="fw-bold mb-2">
+                {{product.name}}
+            </h2>
+
+            <p class="text-muted fs-5">
+                {{product.description}}
+            </p>
+
+            <div class="mb-3">
+
+                <span class="badge bg-success">
+                    In Stock
+                </span>
+
+                <span class="text-success ms-3">
+                    Only {{product.stockQuantity}} left
+                </span>
+
+            </div>
+
+            <div class="mb-4">
+
+                <span class="display-5 fw-bold text-success">
+
+                    ₹{{product.discountPrice}}
+
+                </span>
+
+                <span
+                    class="text-decoration-line-through text-danger ms-3 fs-3">
+
+                    ₹{{product.price}}
+
+                </span>
+
+            </div>
+
+            <table class="table table-bordered">
+
+                <tbody>
+
+                    <tr>
+                        <th width="180">Category</th>
+                        <td>{{product.categoryName || '-'}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Brand</th>
+                        <td>{{product.brandName || '-'}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Warranty</th>
+                        <td>{{product.warrantyMonths}} Months</td>
+                    </tr>
+
+                    <tr>
+                        <th>Weight</th>
+                        <td>{{product.weight}} gm</td>
+                    </tr>
+
+                    <tr>
+                        <th>Stock</th>
+                        <td>{{product.stockQuantity}}</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <div class="d-flex gap-3 mt-4">
+
+                <button
+                    class="btn btn-primary btn-lg"
+                    (click)="addToCart()">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    Add To Cart
+
+                </button>
+
+                <button class="btn btn-warning btn-lg">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

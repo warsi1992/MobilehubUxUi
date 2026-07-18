@@ -1,0 +1,128 @@
+<div
+    class="container py-5"
+    *ngIf="order">
+
+    <h2 class="mb-4">
+
+        Order #{{order.orderId}}
+
+    </h2>
+
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h5>Shipping Address</h5>
+
+                    <p>
+
+                        <strong>{{order.fullName}}</strong><br>
+
+                        {{order.phone}}<br>
+
+                        {{order.address}}<br>
+
+                        {{order.city}},
+                        {{order.state}}
+                        {{order.pincode}}
+
+                    </p>
+
+                </div>
+
+                <div class="col-md-6 text-end">
+
+                    <h5>Status</h5>
+
+                    <span class="badge bg-success">
+
+                        {{order.status}}
+
+                    </span>
+
+                    <br><br>
+
+                    <strong>Date:</strong>
+
+                    {{order.orderDate | date:'medium'}}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm">
+
+        <div class="card-header">
+
+            Ordered Items
+
+        </div>
+
+        <div class="card-body p-0">
+
+            <table class="table mb-0">
+
+                <thead>
+
+                    <tr>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr
+                        *ngFor="let item of order.items">
+ <td>
+        <img
+            [src]="apiUrl + item.imageUrl"
+            [routerLink]="['/products', item.productId]"
+            width="70"
+            height="70"
+            class="rounded border"
+            style="cursor:pointer;object-fit:cover">
+    </td>
+                        <td>{{item.productName}} </td>
+
+                        <td>₹ {{item.unitPrice}}</td>
+
+                        <td>{{item.quantity}}</td>
+
+                        <td>₹ {{item.total}}</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="text-end mt-3">
+
+        <h4>
+
+            Grand Total :
+            ₹ {{order.totalAmount}}
+
+        </h4>
+
+    </div>
+
+</div>

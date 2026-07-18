@@ -1,0 +1,29 @@
+.card{
+    border-radius:18px;
+    overflow:hidden;
+    transition:all .3s ease;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.card-img-top{
+    height:250px;
+    object-fit:cover;
+}
+
+.card-title{
+    font-weight:600;
+}
+
+.btn-primary{
+    border-radius:10px;
+}
+
+.text-success{
+    font-size:24px;
+    font-weight:bold;
+}

@@ -1,0 +1,17 @@
+.admin-container{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#f8fafc;
+
+}
+
+.admin-content{
+
+    flex:1;
+
+    margin-left:260px;
+
+}

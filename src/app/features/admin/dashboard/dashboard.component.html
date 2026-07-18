@@ -1,0 +1,163 @@
+<div class="container-fluid">
+
+    <!-- Header -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold mb-0">Dashboard</h2>
+
+            <small class="text-muted">
+                Welcome back, Admin 👋
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="row g-4">
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-card bg-primary">
+
+                <div>
+
+                    <small>Total Products</small>
+
+                    <h2>{{dashboard?.totalProducts}}</h2>
+
+                </div>
+
+                <i class="bi bi-phone dashboard-icon"></i>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-card bg-success">
+
+                <div>
+
+                    <small>Total Categories</small>
+
+                    <h2>{{dashboard?.totalCategories}}</h2>
+
+                </div>
+
+                <i class="bi bi-grid dashboard-icon"></i>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-card bg-warning">
+
+                <div>
+
+                    <small>Total Orders</small>
+
+                    <h2>{{dashboard?.totalOrders}}</h2>
+
+                </div>
+
+                <i class="bi bi-bag-check dashboard-icon"></i>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-card bg-danger">
+
+                <div>
+
+                    <small>Total Users</small>
+
+                    <h2>{{dashboard?.totalUsers}}</h2>
+
+                </div>
+
+                <i class="bi bi-people dashboard-icon"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Second Row -->
+
+    <div class="row g-4 mt-2">
+
+        <div class="col-xl-4">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+                        Revenue
+                    </h6>
+
+                    <h2 class="fw-bold text-success">
+                        {{dashboard?.totalRevenue | currency:'INR'}}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-4">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+                        Pending Orders
+                    </h6>
+
+                    <h2 class="text-warning fw-bold">
+                        {{dashboard?.pendingOrders}}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-4">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+                        Completed Orders
+                    </h6>
+
+                    <h2 class="text-success fw-bold">
+                        {{dashboard?.completedOrders}}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

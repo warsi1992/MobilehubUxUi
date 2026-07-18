@@ -1,0 +1,124 @@
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2>Product Management</h2>
+
+        <a
+            routerLink="/admin/products/add"
+            class="btn btn-primary">
+
+            <i class="bi bi-plus-circle"></i>
+
+            Add Product
+
+        </a>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="table-responsive">
+
+            <table class="table table-hover mb-0">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Category</th>
+
+                        <th>Brand</th>
+
+                        <th>Price</th>
+
+                        <th>Stock</th>
+
+                        <th>Status</th>
+
+                        <th width="180"></th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let p of products">
+
+                        <td>
+
+                            {{p.name}}
+
+                        </td>
+
+                        <td>
+
+                            {{p.categoryName}}
+
+                        </td>
+
+                        <td>
+
+                            {{p.brandName}}
+
+                        </td>
+
+                        <td>
+
+                            ₹ {{p.price}}
+
+                        </td>
+
+                        <td>
+
+                            {{p.stockQuantity}}
+
+                        </td>
+
+                        <td>
+
+                            <span
+                                class="badge"
+                                [class.bg-success]="p.isActive"
+                                [class.bg-danger]="!p.isActive">
+
+                                {{p.isActive ? 'Active' : 'Inactive'}}
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <a
+                                class="btn btn-warning btn-sm me-2"
+                                [routerLink]="['/admin/products/edit', p.id]">
+
+                                Edit
+
+                            </a>
+
+                            <button
+                                class="btn btn-danger btn-sm"
+                                (click)="delete(p.id)">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

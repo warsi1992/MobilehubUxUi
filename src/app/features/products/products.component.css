@@ -1,0 +1,18 @@
+.product-card{
+    transition:0.3s;
+    border-radius:12px;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15)!important;
+}
+
+.card-title{
+    font-size:18px;
+    font-weight:600;
+}
+
+.card-img-top{
+    background:#fff;
+}

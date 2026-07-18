@@ -1,0 +1,35 @@
+.card {
+
+    border: none;
+
+    border-radius: 12px;
+
+}
+
+.card-header {
+
+    background: white;
+
+    font-size: 20px;
+
+}
+
+.form-control {
+
+    border-radius: 8px;
+
+}
+
+.btn-success {
+
+    height: 50px;
+
+    font-size: 18px;
+
+}
+
+.sticky-top {
+
+    top: 90px;
+
+}

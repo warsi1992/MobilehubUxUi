@@ -1,0 +1,83 @@
+<div class="container py-5">
+
+    <h2 class="mb-4">My Orders</h2>
+
+    <div
+        *ngIf="orders.length === 0"
+        class="alert alert-info">
+
+        You have not placed any orders.
+
+    </div>
+
+    <div
+        class="card mb-3 shadow-sm"
+        *ngFor="let order of orders">
+
+        <div class="card-body">
+
+            <div class="row">
+
+               <div class="col-md-3">
+
+    <strong>Order</strong><br>
+
+    #{{order.orderId}}
+
+    <div class="mt-2 d-flex">
+
+        <a
+            *ngFor="let item of order.items | slice:0:3"
+            [routerLink]="['/products', item.productId]">
+
+           <img
+    [src]="apiUrl + item.imageUrl"
+    width="60"
+    height="60"
+    class="rounded border"
+    style="object-fit: cover;">
+   
+
+        </a>
+
+    </div>
+
+</div>
+
+                <div class="col-md-3">
+                    <strong>Date</strong><br>
+                    {{order.orderDate | date:'medium'}}
+                </div>
+
+                <div class="col-md-2">
+                    <strong>Total</strong><br>
+                    ₹ {{order.totalAmount}}
+                </div>
+
+                <div class="col-md-2">
+                    <strong>Status</strong><br>
+
+                    <span class="badge bg-success">
+
+                        {{order.status}}
+
+                    </span>
+
+                </div>
+
+                <div class="col-md-2 text-end">
+<button
+    class="btn btn-outline-primary"
+    (click)="viewDetails(order.orderId)">
+    View Details
+</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
