@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
 import { AdminHeaderComponent } from '../admin-header/admin-header.component';
@@ -15,14 +15,13 @@ import { AdminHeaderComponent } from '../admin-header/admin-header.component';
     AdminHeaderComponent
   ],
   templateUrl: './admin-layout.component.html',
-  styleUrls: ['./admin-layout.component.css']
+  styleUrl: './admin-layout.component.css'
 })
 export class AdminLayoutComponent {
 
   isSidebarOpen = false;
 
-  toggleSidebar() {
+  toggleSidebar(): void {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
-
 }
