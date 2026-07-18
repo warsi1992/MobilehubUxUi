@@ -1,57 +1,35 @@
-<div class="sidebar">
+<div class="sidebar" [class.open]="isOpen">
 
-    <h3 class="logo">
-
-        MobileHub Admin
-
-    </h3>
+    <h3 class="logo">SonuMobiles Admin</h3>
 
     <a routerLink="/admin/dashboard">
-
         <i class="bi bi-speedometer2"></i>
-
         Dashboard
-
     </a>
 
     <a routerLink="/admin/categories">
-
         <i class="bi bi-grid"></i>
-
         Categories
-
     </a>
 
     <a routerLink="/admin/products">
-
         <i class="bi bi-box"></i>
-
         Products
-
     </a>
 
     <a routerLink="/admin/orders">
-
         <i class="bi bi-bag"></i>
-
         Orders
-
     </a>
 
     <a routerLink="/admin/users">
-
         <i class="bi bi-people"></i>
-
         Users
-
     </a>
 
     <a routerLink="/login">
-
         <i class="bi bi-box-arrow-right"></i>
-
         Logout
-
     </a>
 
 </div>
